@@ -1,10 +1,11 @@
 Feature: Mail draft
 
-Scenario: Saving the letter as draft
-Given I opened Mail.ru site
-When I create new letter with parameters:
-|email| MAIL_SUBJECT | Body|
-|"ekaterinamoldavskaia18@gmail.com"| MAIL_SUBJECT | "Test"|
-And I save the letter as draft
-And I open Draft folder
-Then the letter is in Draft folder
+  Scenario: Saving the letter as draft
+    Given I opened Mail.ru site
+    When I log in
+    And I create new letter with parameters:
+      | email                            | mailBodyText |
+      | ekaterinamoldavskaia18@gmail.com | Test         |
+    And I save the letter as draft
+    And I open Draft folder
+    Then the letter is in Draft folder
