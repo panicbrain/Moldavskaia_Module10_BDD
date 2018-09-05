@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Stepdefs.MailStepsDefs;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -8,7 +9,7 @@ public class DraftMailsPage extends BaseAreasPage {
         super(driver);
     }
 
-    private String toLocator = "[data-subject='" + MAIL_SUBJECT + "']";
+    private String toLocator = "[data-subject='" + MailStepsDefs.MAIL_SUBJECT + "']";
     private final By LAST_SAVED_DRAFT_LOCATOR = By.cssSelector(toLocator);
 
     public NewLetterPage openLastSavedDraft() {

@@ -1,6 +1,5 @@
 package PageObjects;
 
-import BusinessObjects.Letters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +20,6 @@ public class NewLetterPage extends BaseAreasPage {
     private final static By SENT_MAIL_MESSAGE = By.cssSelector(".message-sent__title");
 
     public NewLetterPage fillAllFieldsOfNewLetter(String email, String MAIL_SUBJECT, String mailBodyText) {
-        //String email = letter.getEmail();
-        //String mailBodyText = letter.getEmailBodyText();
         waitForElementsVisible(EMAIL_ADDRESS_INPUT_LOCATOR);
         driver.findElement(EMAIL_ADDRESS_INPUT_LOCATOR).sendKeys(email);
         waitForElementsVisible(SUBJECT_INPUT_LOCATOR);

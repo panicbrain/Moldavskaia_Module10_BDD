@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public abstract class BaseAreasPage extends AbstractPage {
     public BaseAreasPage(WebDriver driver) {
@@ -19,9 +18,6 @@ public abstract class BaseAreasPage extends AbstractPage {
     private final static By LOG_OFF_BUTTON_LOCATOR = By.cssSelector("#PH_logoutLink");
     private final static By MAIL_SUBJECTS_LOCATOR = By.cssSelector(".b-datalist__item__subj");
     private final static By SUBJECTS_WITH_BODY = By.cssSelector(".b-datalist__item__subj__snippet");
-
-    static final UUID SUBJECT_TO_MAIL = UUID.randomUUID();
-    public static final String MAIL_SUBJECT = SUBJECT_TO_MAIL.toString();
 
     public NewLetterPage createNewLetter() {
         waitForElementEnabled(NEW_LETTER_BUTTON);

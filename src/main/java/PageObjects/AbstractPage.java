@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
     public WebDriver driver;
-    private static final int WAIT_FOR_ELEMENT_TIMEOUT_SECONDS = 10;
+    private static final int WAIT_FOR_ELEMENT_TIMEOUT_SECONDS = 15;
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
