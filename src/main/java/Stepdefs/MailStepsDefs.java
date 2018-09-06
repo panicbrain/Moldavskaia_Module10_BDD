@@ -104,4 +104,20 @@ public class MailStepsDefs {
     public void checkThatMainPageIsOpenAfterLogOut(){
         assertEquals(new HomePage(driver).driver.getTitle(), "Mail.Ru: почта, поиск в интернете, новости, игры");
     }
+
+    @And("^I fill the email field in new letter page with \"([^\"]*)\"$")
+    public void iFillTheEmailFieldInNewLetterPageWith(String email){
+        NewLetterPage newLetterPage = new IncomingMailsPage(driver).createNewLetter();
+        newLetterPage.fillTheEmailField(email);
+    }
+
+    @And("^I fill the subject in new letter page$")
+    public void iFillTheSubjectInNewLetterPage() {
+        new NewLetterPage(driver).fillTheEmailSubject(MAIL_SUBJECT);
+    }
+
+    @And("^I fill the email body with \"(Text \\d+)\"$")
+    public void iFillTheEmailBodyWith(String mailBodyText) {
+        new NewLetterPage(driver).fillEmailBody(mailBodyText);
+    }
 }

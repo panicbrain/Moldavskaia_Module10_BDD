@@ -61,3 +61,12 @@ Feature: Mail draft
       | Test 1 |
       | Test 2 |
       | Test 3 |
+
+  Scenario: Sending letter with different text of email
+    When I log in
+    And I fill the email field in new letter page with "ekaterinamoldavskaia18@gmail.com"
+    And I fill the subject in new letter page
+    And I fill the email body with "Text 10"
+    And I send the letter
+    Then the letter should be in Sent folder
+

@@ -12,7 +12,7 @@ public abstract class BaseAreasPage extends AbstractPage {
         super(driver);
     }
 
-    private final static By NEW_LETTER_BUTTON = By.linkText("Написать письмо");
+    private final static By NEW_LETTER_BUTTON = By.cssSelector(".b-toolbar__btn_with-foldings");
     private final static By DRAFT_LETTERS_FOLDER_LOCATOR = By.cssSelector("[data-mnemo=\"drafts\"]");
     private final static By SENT_LETTERS_FOLDER_LOCATOR = By.cssSelector("[href='/messages/sent/']");
     private final static By LOG_OFF_BUTTON_LOCATOR = By.cssSelector("#PH_logoutLink");

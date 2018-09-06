@@ -64,4 +64,24 @@ public class NewLetterPage extends BaseAreasPage {
         driver.findElement(SEND_MAIL_BUTTON).click();
         waitForElementVisible(SENT_MAIL_MESSAGE);
     }
+
+    public NewLetterPage fillTheEmailField(String email) {
+        waitForElementsVisible(EMAIL_ADDRESS_INPUT_LOCATOR);
+        driver.findElement(EMAIL_ADDRESS_INPUT_LOCATOR).sendKeys(email);
+        return new NewLetterPage(driver);
+    }
+
+    public NewLetterPage fillTheEmailSubject(String MAIL_SUBJECT) {
+        waitForElementsVisible(SUBJECT_INPUT_LOCATOR);
+        driver.findElement(SUBJECT_INPUT_LOCATOR).sendKeys(MAIL_SUBJECT);
+        return new NewLetterPage(driver);
+    }
+
+    public NewLetterPage fillEmailBody(String mailBodyText){
+        driver.switchTo().frame(driver.findElement(FRAME_MAIL_BODY_LOCATOR));
+        waitForElementEnabled(MAIL_BODY_INPUT_LOCATOR);
+        driver.findElement(MAIL_BODY_INPUT_LOCATOR).sendKeys(mailBodyText);
+        driver.switchTo().defaultContent();
+        return new NewLetterPage(driver);
+    }
 }

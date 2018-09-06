@@ -4,7 +4,6 @@ import DriverManager.ChromeWebDriverSingleton;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
-import java.util.UUID;
 
 public class ScenarioHooks {
     @Before
